@@ -1,5 +1,6 @@
 package entity;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -7,6 +8,18 @@ public class Store {
     private String name;
     private List<Item> items;
     private List<String> feedbackList;
+
+    public Store() {
+        this.name = null;
+        this.items = null;
+        this.feedbackList = null;
+    }
+
+    public Store(String name, List<String> feedbackList) {
+        this.name = name;
+        items = new ArrayList<Item>();
+        this.feedbackList = feedbackList;
+    }
 
     public void setName(String name) {
         this.name = name;

@@ -1,5 +1,7 @@
 package entity;
 
+import exception.ItemException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -28,12 +30,16 @@ public class Item {
         this.name = name;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(int price) throws ItemException {
         this.price = price;
+
+        checkPrice(price);
     }
 
-    public void setCount(int count) {
+    public void setCount(int count) throws ItemException {
         this.count = count;
+
+        checkCount(count);
     }
 
     public void setStores(List<Store> stores) {
@@ -54,6 +60,18 @@ public class Item {
 
     public List<Store> getStores() {
         return stores;
+    }
+
+    private void checkPrice(int price) throws ItemException {
+        if (price <= 0) {
+            throw new ItemException("Price must be a positive number!");
+        }
+    }
+
+    private void checkCount(int count) throws ItemException {
+        if (count <= 0) {
+            throw new ItemException("Count must be a positive number!");
+        }
     }
 
     @Override
