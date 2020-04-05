@@ -1,4 +1,4 @@
-package entity;
+package by.bsu.onlinestore.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +45,14 @@ public class Store {
         return feedbackList;
     }
 
+    public List<String> getItemsNames() {
+        List<String> names = new ArrayList<>();
+        for (Item item : items) {
+            names.add(item.getName());
+        }
+        return names;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,7 +71,7 @@ public class Store {
     public String toString() {
         return "Store{" +
                 "name='" + name + '\'' +
-                ", items=" + items +
+                ", itemsNames=" + getItemsNames() +
                 ", feedbackList=" + feedbackList +
                 '}';
     }

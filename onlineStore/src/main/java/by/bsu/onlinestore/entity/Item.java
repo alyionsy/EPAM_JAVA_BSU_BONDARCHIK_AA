@@ -1,6 +1,6 @@
-package entity;
+package by.bsu.onlinestore.entity;
 
-import exception.ItemException;
+import by.bsu.onlinestore.exception.ItemException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +62,14 @@ public class Item {
         return stores;
     }
 
+    public List<String> getStoresNames() {
+        List<String> names = new ArrayList<>();
+        for (Store store : stores) {
+            names.add(store.getName());
+        }
+        return names;
+    }
+
     private void checkPrice(int price) throws ItemException {
         if (price <= 0) {
             throw new ItemException("Price must be a positive number!");
@@ -95,7 +103,7 @@ public class Item {
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", count=" + count +
-                ", stores=" + stores +
+                ", stores=" + getStoresNames() +
                 '}';
     }
 }
