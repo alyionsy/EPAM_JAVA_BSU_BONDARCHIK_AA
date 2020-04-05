@@ -28,7 +28,7 @@ public class TestItemsStream {
         //        stores initialization
         Store store1 = new Store("Farfetch", goodFeedback);
         Store store2 = new Store("AliExpress", badFeedback);
-//        setting missing lists
+        //        setting missing lists
         item1.setStores(Arrays.asList(store1, store2));
         item2.setStores(Collections.singletonList(store1));
         item3.setStores(Arrays.asList(store1, store2));
@@ -85,7 +85,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void filterItemsWithSingleStore() {
+    public void filterItemsWithSingleStoreTest() {
         logger.info("Filtering items with a single store.");
         List<Item> filteredItems = items.stream()
                 .filter(item -> item.getStores().size() == 1)
@@ -99,7 +99,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void sortItemsByPrice() {
+    public void sortItemsByPriceTest() {
         logger.info("Sorting items by its' price.");
         List<Item> expected = Arrays.asList(items.get(3), items.get(4), items.get(2),
                 items.get(0), items.get(1));
@@ -112,7 +112,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void sortItemsByCount() {
+    public void sortItemsByCountTest() {
         logger.info("Sorting items by its' count.");
         List<Item> expected = Arrays.asList(items.get(1), items.get(0), items.get(2),
                 items.get(3), items.get(4));
@@ -125,7 +125,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void getStoresList() {
+    public void getStoresListTest() {
         logger.info("Getting stores list.");
         List<Store> expected = Arrays.asList(stores.get(0), stores.get(1),
                 stores.get(0), stores.get(0), stores.get(1), stores.get(1), stores.get(1));
@@ -138,7 +138,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void getStoresListWithoutDuplicates() {
+    public void getStoresListWithoutDuplicatesTest() {
         logger.info("Getting stores list without duplicates.");
 
         List<Store> result = new ArrayList<>();
@@ -153,7 +153,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void printStoresInfo() {
+    public void printStoresInfoByItems() {
         logger.info("Printing stores information.");
 
         List<Store> result = new ArrayList<>();
@@ -164,6 +164,36 @@ public class TestItemsStream {
                 .collect(Collectors.toList());
 
         actual.forEach(System.out::println);
+    }
+
+    @Test
+    public void printStoresInfoByStores() {
+        logger.info("Printing stores information (using stores list).");
+
+        stores.forEach(System.out::println);
+    }
+
+    @Test
+    public void usingParallelStream(){
+        long start;
+
+        start = System.nanoTime();
+        List<Item> temp2 = items.stream()
+                .filter(item -> item.getStores().size() == 1)
+                .peek(item -> logger.debug("Found item: " + item))
+                .collect((Collectors.toCollection(ArrayList::new)));
+        double timeNotParallel = (double)(System.nanoTime() - start) / 1000000;
+
+        start = System.nanoTime();
+        List<Item> temp1 = items.parallelStream()
+                .filter(item -> item.getStores().size() == 1)
+                .peek(item -> logger.debug("Found item: " + item))
+                .collect((Collectors.toCollection(ArrayList::new)));
+        double timeParallel = (double)(System.nanoTime() - start) / 1000000;
+
+        logger.info("\nPerformance using parallelStream(): " + timeParallel + " ms" +
+                "\nPerformance without using parallelStream(): " + timeNotParallel + " ms" +
+                "\nDifference (times): " + timeNotParallel/timeParallel);
     }
 
 }
