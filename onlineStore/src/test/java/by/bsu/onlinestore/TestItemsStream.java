@@ -178,13 +178,13 @@ public class TestItemsStream {
         long start;
         // using regular stream
         start = System.nanoTime();
-        List<Item> temp2 = items.stream()
+        List<Item> temp1 = items.stream()
                 .filter(item -> item.getStores().size() == 1)
                 .collect((Collectors.toCollection(ArrayList::new)));
         double timeNotParallel = (double)(System.nanoTime() - start) / 1000000;
         // using parallelStream
         start = System.nanoTime();
-        List<Item> temp1 = items.parallelStream()
+        List<Item> temp2 = items.parallelStream()
                 .filter(item -> item.getStores().size() == 1)
                 .collect((Collectors.toCollection(ArrayList::new)));
         double timeParallel = (double)(System.nanoTime() - start) / 1000000;
