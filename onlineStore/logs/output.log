@@ -1,45 +1,39 @@
-17:22:35.152 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.156 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
-17:22:35.157 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
-17:22:35.162 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
-17:22:35.162 [ForkJoinPool.commonPool-worker-7] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
-17:22:35.162 [ForkJoinPool.commonPool-worker-5] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.167 [main] INFO  by.bsu.onlinestore.TestItemsStream - 
-Performance using parallelStream(): 5.6389 ms
-Performance without using parallelStream(): 17.2335 ms
-Difference (times): 3.0561811700863646
-17:22:35.180 [main] INFO  by.bsu.onlinestore.TestItemsStream - Printing stores information (using stores list).
-17:22:35.188 [main] INFO  by.bsu.onlinestore.TestItemsStream - Finding items with max count.
-17:22:35.189 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
-17:22:35.198 [main] INFO  by.bsu.onlinestore.TestItemsStream - Finding items with min count.
-17:22:35.199 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.205 [main] INFO  by.bsu.onlinestore.TestItemsStream - Sorting items by its' count.
-17:22:35.206 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.207 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Nike Air Force', price=160, count=50, stores=[Farfetch, AliExpress]}
-17:22:35.207 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Fila Disruptor', price=70, count=100, stores=[Farfetch, AliExpress]}
-17:22:35.207 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
-17:22:35.207 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
-17:22:35.214 [main] INFO  by.bsu.onlinestore.TestItemsStream - Checking if there items more expensive than 500.
-17:22:35.223 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.227 [main] INFO  by.bsu.onlinestore.TestItemsStream - Sorting items by its' price.
-17:22:35.234 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
-17:22:35.235 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
-17:22:35.235 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Fila Disruptor', price=70, count=100, stores=[Farfetch, AliExpress]}
-17:22:35.236 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Nike Air Force', price=160, count=50, stores=[Farfetch, AliExpress]}
-17:22:35.236 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.240 [main] INFO  by.bsu.onlinestore.TestItemsStream - Printing stores information.
-17:22:35.245 [main] INFO  by.bsu.onlinestore.TestItemsStream - Getting stores list without duplicates.
-17:22:35.248 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
-17:22:35.248 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
-17:22:35.253 [main] INFO  by.bsu.onlinestore.TestItemsStream - Getting stores list.
-17:22:35.255 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
-17:22:35.256 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
-17:22:35.258 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
-17:22:35.260 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
-17:22:35.261 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
-17:22:35.261 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
-17:22:35.262 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
-17:22:35.265 [main] INFO  by.bsu.onlinestore.TestItemsStream - Filtering items with a single store.
-17:22:35.268 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
-17:22:35.269 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
-17:22:35.269 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
+17:45:02.993 [main] INFO  by.bsu.onlinestore.TestItemsStream - 
+Performance using stream(): 0.7853 ms
+Performance using parallelStream(): 3.2203 ms
+Difference (times): 0.24385926777008354
+17:45:03.013 [main] INFO  by.bsu.onlinestore.TestItemsStream - Printing stores information (using stores list).
+17:45:03.016 [main] INFO  by.bsu.onlinestore.TestItemsStream - Finding items with max count.
+17:45:03.027 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
+17:45:03.034 [main] INFO  by.bsu.onlinestore.TestItemsStream - Finding items with min count.
+17:45:03.035 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
+17:45:03.041 [main] INFO  by.bsu.onlinestore.TestItemsStream - Sorting items by its' count.
+17:45:03.042 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
+17:45:03.043 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Nike Air Force', price=160, count=50, stores=[Farfetch, AliExpress]}
+17:45:03.044 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Fila Disruptor', price=70, count=100, stores=[Farfetch, AliExpress]}
+17:45:03.044 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
+17:45:03.045 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
+17:45:03.051 [main] INFO  by.bsu.onlinestore.TestItemsStream - Checking if there items more expensive than 500.
+17:45:03.072 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
+17:45:03.075 [main] INFO  by.bsu.onlinestore.TestItemsStream - Sorting items by its' price.
+17:45:03.077 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
+17:45:03.077 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}
+17:45:03.077 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Fila Disruptor', price=70, count=100, stores=[Farfetch, AliExpress]}
+17:45:03.078 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Nike Air Force', price=160, count=50, stores=[Farfetch, AliExpress]}
+17:45:03.078 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Sorted item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
+17:45:03.080 [main] INFO  by.bsu.onlinestore.TestItemsStream - Printing stores information.
+17:45:03.085 [main] INFO  by.bsu.onlinestore.TestItemsStream - Getting stores list without duplicates.
+17:45:03.087 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
+17:45:03.088 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
+17:45:03.090 [main] INFO  by.bsu.onlinestore.TestItemsStream - Getting stores list.
+17:45:03.091 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
+17:45:03.091 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
+17:45:03.092 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
+17:45:03.092 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='Farfetch', itemsNames=[Nike Air Force, Balenciaga Triple-S, Fila Disruptor], feedbackList=[excellent, fine, well]}
+17:45:03.092 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
+17:45:03.092 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
+17:45:03.093 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Store{name='AliExpress', itemsNames=[Nike Air Force, Fila Disruptor, Vans Oldskool Replica, New Balance 998 Replica], feedbackList=[bad, terrible, awful]}
+17:45:03.099 [main] INFO  by.bsu.onlinestore.TestItemsStream - Filtering items with a single store.
+17:45:03.101 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Balenciaga Triple-S', price=740, count=10, stores=[Farfetch]}
+17:45:03.101 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='Vans Oldskool Replica', price=35, count=120, stores=[AliExpress]}
+17:45:03.101 [main] DEBUG by.bsu.onlinestore.TestItemsStream - Found item: Item{name='New Balance 998 Replica', price=40, count=150, stores=[AliExpress]}

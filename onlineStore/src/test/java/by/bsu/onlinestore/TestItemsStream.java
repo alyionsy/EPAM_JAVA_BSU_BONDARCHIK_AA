@@ -19,13 +19,13 @@ public class TestItemsStream {
     public TestItemsStream() {
         List<String> goodFeedback = Arrays.asList("excellent", "fine", "well");
         List<String> badFeedback = Arrays.asList("bad", "terrible", "awful");
-        //        items initialization
+        //        items creation
         Item item1 = new Item("Nike Air Force", 160, 50);
         Item item2 = new Item("Balenciaga Triple-S", 740, 10);
         Item item3 = new Item("Fila Disruptor", 70, 100);
         Item item4 = new Item("Vans Oldskool Replica", 35, 120);
         Item item5 = new Item("New Balance 998 Replica", 40, 150);
-        //        stores initialization
+        //        stores creation
         Store store1 = new Store("Farfetch", goodFeedback);
         Store store2 = new Store("AliExpress", badFeedback);
         //        setting missing lists
@@ -174,25 +174,23 @@ public class TestItemsStream {
     }
 
     @Test
-    public void usingParallelStream(){
+    public void filterUsingParallelStreamTest(){
         long start;
-
+        // using regular stream
         start = System.nanoTime();
         List<Item> temp2 = items.stream()
                 .filter(item -> item.getStores().size() == 1)
-                .peek(item -> logger.debug("Found item: " + item))
                 .collect((Collectors.toCollection(ArrayList::new)));
         double timeNotParallel = (double)(System.nanoTime() - start) / 1000000;
-
+        // using parallelStream
         start = System.nanoTime();
         List<Item> temp1 = items.parallelStream()
                 .filter(item -> item.getStores().size() == 1)
-                .peek(item -> logger.debug("Found item: " + item))
                 .collect((Collectors.toCollection(ArrayList::new)));
         double timeParallel = (double)(System.nanoTime() - start) / 1000000;
 
-        logger.info("\nPerformance using parallelStream(): " + timeParallel + " ms" +
-                "\nPerformance without using parallelStream(): " + timeNotParallel + " ms" +
+        logger.info("\nPerformance using stream(): " + timeNotParallel + " ms" +
+                "\nPerformance using parallelStream(): " + timeParallel + " ms" +
                 "\nDifference (times): " + timeNotParallel/timeParallel);
     }
 
