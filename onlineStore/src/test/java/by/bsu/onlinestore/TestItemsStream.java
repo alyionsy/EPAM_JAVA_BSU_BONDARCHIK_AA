@@ -28,7 +28,7 @@ public class TestItemsStream {
         //        stores creation
         Store store1 = new Store("Farfetch", goodFeedback);
         Store store2 = new Store("AliExpress", badFeedback);
-//        setting missing lists
+        //        setting missing lists
         item1.setStores(Arrays.asList(store1, store2));
         item2.setStores(Collections.singletonList(store1));
         item3.setStores(Arrays.asList(store1, store2));
