@@ -28,7 +28,7 @@ public class TestItemsStream {
         //        stores creation
         Store store1 = new Store("Farfetch", goodFeedback);
         Store store2 = new Store("AliExpress", badFeedback);
-        //        setting missing lists
+//        setting missing lists
         item1.setStores(Arrays.asList(store1, store2));
         item2.setStores(Collections.singletonList(store1));
         item3.setStores(Arrays.asList(store1, store2));
@@ -85,7 +85,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void filterItemsWithSingleStoreTest() {
+    public void filterItemsWithSingleStore() {
         logger.info("Filtering items with a single store.");
         List<Item> filteredItems = items.stream()
                 .filter(item -> item.getStores().size() == 1)
@@ -99,7 +99,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void sortItemsByPriceTest() {
+    public void sortItemsByPrice() {
         logger.info("Sorting items by its' price.");
         List<Item> expected = Arrays.asList(items.get(3), items.get(4), items.get(2),
                 items.get(0), items.get(1));
@@ -112,7 +112,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void sortItemsByCountTest() {
+    public void sortItemsByCount() {
         logger.info("Sorting items by its' count.");
         List<Item> expected = Arrays.asList(items.get(1), items.get(0), items.get(2),
                 items.get(3), items.get(4));
@@ -125,7 +125,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void getStoresListTest() {
+    public void getStoresList() {
         logger.info("Getting stores list.");
         List<Store> expected = Arrays.asList(stores.get(0), stores.get(1),
                 stores.get(0), stores.get(0), stores.get(1), stores.get(1), stores.get(1));
@@ -138,7 +138,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void getStoresListWithoutDuplicatesTest() {
+    public void getStoresListWithoutDuplicates() {
         logger.info("Getting stores list without duplicates.");
 
         List<Store> result = new ArrayList<>();
@@ -153,7 +153,7 @@ public class TestItemsStream {
     }
 
     @Test
-    public void printStoresInfoByItems() {
+    public void printStoresInfo() {
         logger.info("Printing stores information.");
 
         List<Store> result = new ArrayList<>();
@@ -193,5 +193,4 @@ public class TestItemsStream {
                 "\nPerformance using parallelStream(): " + timeParallel + " ms" +
                 "\nDifference (times): " + timeNotParallel/timeParallel);
     }
-
 }
